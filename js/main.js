@@ -1,10 +1,12 @@
 var resultado = document.getElementById("resultado");
-var resultado2 = document.getElementById("resultado2");
-
 var resultados;
-var resultados2;
-
 var numero = document.getElementById('numero');
+
+var resultado2 = document.getElementById("resultado2");
+var resultados2;
+var numero1 = document.getElementById("numero1");
+var numero2 = document.getElementById("numero2");
+
 
 function hallarDivisores(numero) {
   numero = numero.value;
@@ -51,12 +53,22 @@ function hallarPrimos(numero) {
   }
 }
 
-function hallarMCM(numero) {
-    
+function hallarMCM(numero1, numero2) {
+
 }
 
-function hallarMCD(numero) {
-  
+function hallarMCD(numero1, numero2) {
+  x = numero1;
+  y = numero2;
+  var residuo = 0;
+  while (x % y != 0) {
+    resto = x % y;
+    x = y;
+    y = residuo;
+  }
+  toPrint = "El Maximo comun Divisor entre " + numero1 +" y " + numero2 + "es: " + y;
+  imprimir2(toPrint)
+  return y;
 }
 
 function imprimir(resultados) {
