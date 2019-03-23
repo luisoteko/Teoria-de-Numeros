@@ -11,9 +11,9 @@
   <h1>Teoria de Numeros</h1>
   <input type="number" id="numero" placeholder="Ingrese el numero">
   <br>
-  <button id="divisores" onclick="hallarDivisores(document.getElementById('numero').value)">Divisores</button>
+  <button id="divisores" onclick="hallarDivisores(numero)">Divisores</button>
   <br>
-  <button id="primos" onclick="hallarPrimos(document.getElementById('numero').value)">Determinar si es primo o compuesto</button>
+  <button id="primos" onclick="hallarPrimos(numero)">Determinar si es primo o compuesto</button>
   <br>
   <section id="resultado"></section>
   <br>
@@ -24,6 +24,7 @@
   <button id="mcm">Minimo Comun Multiplo</button>
   <br>
   <button id="mcd">Maximo Comun Divisor</button>
+  <section id="resultado2"></section>
   <script src="./js/main.js"></script>
 
 </body>
