@@ -53,24 +53,39 @@ function hallarPrimos(numero) {
   }
 }
 
-function hallarMCM(numero1, numero2) {
-
-}
 
 function hallarMCD(numero1, numero2) {
-  x = numero1;
-  y = numero2;
+  x = Math.max(numero1.value, numero2.value);
+  y = Math.min(numero1.value, numero2.value);
+  x = Math.abs(x);
+  y = Math.abs(y);
   var residuo = 0;
-  while (x % y != 0) {
-    resto = x % y;
-    x = y;
-    y = residuo;
-  }
-  toPrint = "El Maximo comun Divisor entre " + numero1 +" y " + numero2 + "es: " + y;
-  imprimir2(toPrint)
-  return y;
+  console.log("Antes del while");
+  // Algoritmo de Euclides
+  do {
+    console.log("Dentro del while");
+    residuo = y;
+    y = x%y;
+    x = residuo;
+  } while (y != 0);
+  console.log("Luego del while");
+  toPrint = "El Maximo comun Divisor entre " + numero1.value +" y " + numero2.value + " es: " + x;
+  imprimir2(toPrint);
+  return x;
 }
 
+function hallarMCM(numero1, numero2) {
+  var q = hallarMCD(numero1, numero2);
+  x = Math.max(numero1.value, numero2.value);
+  y = Math.min(numero1.value, numero2.value);
+  x = Math.abs(x);
+  y = Math.abs(y);
+  var aux = (x*y)/q;
+  console.log(aux);
+
+  toPrint = "El Minimo comun Multiplo entre " + x + " y " + y + " es: " + aux;
+  imprimir2(toPrint);
+}
 function imprimir(resultados) {
   resultado.innerHTML = resultados;  
 }
