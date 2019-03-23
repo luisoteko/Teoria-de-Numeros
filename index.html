@@ -5,16 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Teoria de Numeros</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
-  <script src="./js/main.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
 <body>
   <h1>Teoria de Numeros</h1>
-  <h3>Corte 1</h3>
   <input type="number" id="numero" placeholder="Ingrese el numero">
-  <button id="divisores">Divisores</button>
-  <button id="Primos">Determinar si es primo o compuesto</button>
+  <br>
+  <button id="divisores" onclick="hallarDivisores(document.getElementById('numero').value)">Divisores</button>
+  <br>
+  <button id="primos" onclick="hallarPrimos(document.getElementById('numero').value)">Determinar si es primo o compuesto</button>
+  <br>
+  <section id="resultado"></section>
+  <br>
+  <br>
+  <input type="number" id="numero1" placeholder="Ingrese el primer numero">
+  <input type="number" id="numero2" placeholder="Ingrese el segundo numero">
+  <br>
   <button id="mcm">Minimo Comun Multiplo</button>
+  <br>
   <button id="mcd">Maximo Comun Divisor</button>
+  <script src="js/main.js"></script>
+
 </body>
 </html>
