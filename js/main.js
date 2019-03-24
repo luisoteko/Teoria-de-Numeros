@@ -60,16 +60,18 @@ function hallarMCD(numero1, numero2) {
   x = Math.abs(x);
   y = Math.abs(y);
   var residuo = 0;
-  console.log("Antes del while");
   // Algoritmo de Euclides
   do {
-    console.log("Dentro del while");
     residuo = y;
     y = x%y;
     x = residuo;
   } while (y != 0);
-  console.log("Luego del while");
-  toPrint = "El Maximo comun Divisor entre " + numero1.value +" y " + numero2.value + " es: " + x;
+  if (x==1) {
+    toPrint = "Los numeros " + numero1.value + " y " + numero2.value + " son primos relativos";
+  }
+  else{
+    toPrint = "El Maximo comun Divisor entre " + numero1.value +" y " + numero2.value + " es: " + x;
+  }
   imprimir2(toPrint);
   return x;
 }

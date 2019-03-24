@@ -8,29 +8,32 @@
   <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
 <body>
-  <h1>Teoria de Numeros</h1>
-  <input type="number" id="numero" placeholder="Ingrese el numero">
-  <br>
-  <br>
-  <button id="divisores" onclick="hallarDivisores(numero)">Divisores</button>
-  <br>
-  <br>
-  <button id="primos" onclick="hallarPrimos(numero)">Determinar si es primo o compuesto</button>
-  <br>
-  <section id="resultado"></section>
-  <br>
-  <br>
-  <input type="number" id="numero1" placeholder="Ingrese el primer numero">
-  <br>
-  <br>
-  <input type="number" id="numero2" placeholder="Ingrese el segundo numero">
-  <br>
-  <button id="mcm" onclick="hallarMCM(numero1, numero2)">Minimo Comun Multiplo</button>
-  <br>
-  <br>
-  <button id="mcd" onclick="hallarMCD(numero1, numero2)">Maximo Comun Divisor</button>
-  <br>
-  <section id="resultado2"></section>
+  <h1 class="Titulo">Teoria de Numeros</h1>
+  <section class="izquierda">
+    <input type="number" id="numero" placeholder="Ingrese el numero" class="input arriba input-arriba">
+    <br>
+    <br>
+    <button id="divisores" onclick="hallarDivisores(numero)" class="Boton arriba Boton-arriba">Divisores</button>
+    <br>
+    <br>
+    <button id="primos" onclick="hallarPrimos(numero)" class="Boton arriba Boton-arriba">Determinar si es primo o compuesto</button>
+    <br>
+    <h4 id="resultado" class="resultado"></h4>
+    <br>
+  </section>
+  <section class="derecha">
+    <input type="number" id="numero1" placeholder="Ingrese el primer numero" class="input abajo input-abajo primero">
+    <br>
+    <br>
+    <input type="number" id="numero2" placeholder="Ingrese el segundo numero" class="input abajo input-abajo segundo">
+    <br>
+    <button id="mcm" onclick="hallarMCM(numero1, numero2)" class="Boton abajo Boton-abajo">Minimo Comun Multiplo</button>
+    <br>
+    <br>
+    <button id="mcd" onclick="hallarMCD(numero1, numero2)" class="Boton abajo Boton-abajo ultimo">Maximo Comun Divisor</button>
+    <br>
+    <h4 id="resultado2" class="resultado"></h4>
+  </section>
   <script src="./js/main.js"></script>
 
 </body>

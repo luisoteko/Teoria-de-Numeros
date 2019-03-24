@@ -1,0 +1,48 @@
+*{
+  text-align: center;
+}
+
+.input{
+  width: 40%;
+  padding: 6px;
+}
+
+.Boton{
+  width: 40%;
+  padding: 6px;
+  margin: 5px;
+}
+.primero {
+  margin-top: 0;
+}
+
+.segundo{
+  margin-bottom: 5px;
+}
+
+.resultado{
+  text-align: center;
+  padding-top: 5px;
+}
+
+section{
+  width: 49%
+}
+.derecha{
+  float: right;
+}
+.izquierda{
+  float: left;
+}
+
+@media screen and (max-width: 768px){
+  section{
+    width: 100%
+  }
+  .derecha{
+    float: initial;
+  }
+  .izquierda{
+    float: initial;
+  }
+}
