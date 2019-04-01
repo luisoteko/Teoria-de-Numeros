@@ -36,4 +36,7 @@
     float: initial;
     width: 100%;
   }
+  .grid{
+    grid-template-columns: 100%
+  }
 }
