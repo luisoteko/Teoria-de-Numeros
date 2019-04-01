@@ -3,21 +3,14 @@
 }
 
 .input{
-  width: 40%;
+  width: 80%;
   padding: 6px;
 }
 
 .Boton{
-  width: 40%;
+  width: 60%;
   padding: 6px;
   margin: 5px;
-}
-.primero {
-  margin-top: 0;
-}
-
-.segundo{
-  margin-bottom: 5px;
 }
 
 .resultado{
@@ -25,24 +18,22 @@
   padding-top: 5px;
 }
 
-section{
-  width: 48%
-}
-.derecha{
-  float: right;
-}
-.izquierda{
-  float: left;
+.grid{
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
 }
 
 @media screen and (max-width: 768px){
-  section{
-    width: 100%
-  }
   .derecha{
     float: initial;
+    width: 100%;
   }
   .izquierda{
     float: initial;
+    width: 100%;
+  }
+  .center{
+    float: initial;
+    width: 100%;
   }
 }
