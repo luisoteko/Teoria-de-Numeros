@@ -22,7 +22,38 @@
   display: grid;
   grid-template-columns: 32% 32% 32%;
 }
-
+.abajo{
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.corchete{
+  width: 5px;
+  margin: 0;
+}
+.CorchAbre{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 19px;
+  border: 4px;
+  outline: none;
+  margin-right: -4px;
+  z-index: 1;
+}
+.CorchCierra {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 19px;
+  border: 4px;
+  outline: none;
+  margin-left: -4px;
+  z-index: 1;
+}
+.conjunto{
+  margin: 0;
+  padding: 6px;
+  outline: none;
+  z-index: 2;
+}
 @media screen and (max-width: 768px){
   .derecha{
     float: initial;

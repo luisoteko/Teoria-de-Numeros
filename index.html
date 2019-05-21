@@ -48,8 +48,25 @@
       <br>
       <h4 id="resultado2" class="resultado"></h4>
     </section>
+    <section class="abajo">
+      <div>
+        <input type="text" id="CorchAbre" placeholder="{" class="input corchIzq corchete CorchAbre" disabled/>
+        <input type="text" id="universal" placeholder="Ingrese el conjunto A"class="conjunto"/>
+        <input type="text" id="CorchCierra" placeholder="}" class="input corchDer corchete CorchCierra" disabled/>
+      </div>
+
+      <div>
+        <input type="text" id="CorchAbre" placeholder="{" class="input corchIzq corchete CorchAbre" disabled />
+        <input type="text" id="relacion" placeholder="Ingrese la relacion" class="conjunto"/>
+        <input type="text" id="CorchCierra" placeholder="}" class="input corchDer corchete CorchCierra" disabled />
+      </div>
+
+
+      <button id="Relacion" onclick="relaciones(universal.value, relacion.value)" class="Boton">Relaciones</button>
+      <br>
+      <h4 id="resultado4" class="resultado"></h4>
+    </section>
   </div>
-  <script src="./js/main.js"></script>
-    
+  <script src="./ts/main.js"></script>
 </body>
 </html>

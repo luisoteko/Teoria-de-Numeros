@@ -142,6 +142,14 @@ function Conjetura(i) {
   return toPrint;
 }
 
+function relaciones(func) {
+  for (let i = 0; i < func.length; i++) {
+    const element = func[i];
+    
+  }
+}
+
+
 function imprimir(resultados) {
   resultado.innerHTML = resultados;
   resultado2.innerHTML = "";
