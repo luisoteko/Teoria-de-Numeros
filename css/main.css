@@ -13,6 +13,10 @@
   margin: 5px;
 }
 
+#Relacion{
+  width: 30%;
+}
+
 .resultado{
   text-align: center;
   padding-top: 5px;
@@ -53,6 +57,7 @@
   padding: 6px;
   outline: none;
   z-index: 2;
+  width: 27%
 }
 @media screen and (max-width: 768px){
   .derecha{

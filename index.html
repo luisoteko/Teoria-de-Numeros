@@ -8,11 +8,11 @@
   <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
 <body>
-  <h1 class="Titulo">Teoria de Numeros</h1>
+  <h1>Matematicas Discretas</h1>
+  <h2 class="Titulo">Teoria de Numeros</h2>
   <h4>Universidad El Bosque</h3>
   <h4>Presentado por: Luis Becerra y Bryan Castillo Torres</h3>
   <h4>Profesor: Nelson Hernandez</h3>
-  <h4>Materia: Matematicas Discretas</h4>
   <div class="grid">
     <section class="izquierda">
       <input type="number" id="numero" placeholder="Ingrese el numero" class="input">
@@ -48,7 +48,9 @@
       <br>
       <h4 id="resultado2" class="resultado"></h4>
     </section>
-    <section class="abajo">
+  </div>
+    <section class="abajo relaciones">
+      <h2>Relaciones</h2>
       <div>
         <input type="text" id="CorchAbre" placeholder="{" class="input corchIzq corchete CorchAbre" disabled/>
         <input type="text" id="universal" placeholder="Ingrese el conjunto A"class="conjunto"/>
@@ -60,13 +62,11 @@
         <input type="text" id="relacion" placeholder="Ingrese la relacion" class="conjunto"/>
         <input type="text" id="CorchCierra" placeholder="}" class="input corchDer corchete CorchCierra" disabled />
       </div>
-
-
+      
       <button id="Relacion" onclick="relaciones(universal.value, relacion.value)" class="Boton">Relaciones</button>
       <br>
       <h4 id="resultado4" class="resultado"></h4>
     </section>
-  </div>
   <script src="./ts/main.js"></script>
 </body>
 </html>
