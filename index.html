@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Teoria de Numeros</title>
+  <title>Matemáticas Discretas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
 <body>
-  <h1>Matematicas Discretas</h1>
-  <h2 class="Titulo">Teoria de Numeros</h2>
+  <h1>Matemáticas Discretas</h1>
+  <h2 class="Titulo">Teoría de Números</h2>
   <h4>Universidad El Bosque</h3>
   <h4>Presentado por: Luis Becerra y Bryan Castillo Torres</h3>
   <h4>Profesor: Nelson Hernandez</h3>
@@ -27,12 +27,12 @@
       <br>
     </section>
     <section class="centro">
-      <input type="number" id="numero3" placeholder="Ingrese la cantidad de numeros que quiere hallar" class="input">
+      <input type="number" id="numero3" placeholder="Ingrese la cantidad de números que quiere hallar" class="input">
       <br>
       <br>
       <button id="goldbach" onclick="CicloConjetura(numero3.value)" class="Boton ">Conjetura de Goldbach</button>
       <br>
-      <h4 id="resultado3" class="resultador"></h4>
+      <h4 id="resultado3" class="resultado"></h4>
     </section>
     <section class="derecha">
       <input type="number" id="numero1" placeholder="Ingrese el primer numero" class="input">
@@ -41,10 +41,10 @@
       <input type="number" id="numero2" placeholder="Ingrese el segundo numero" class="input">
       <br>
       <br>
-      <button id="mcm" onclick="hallarMCM(numero1.value, numero2.value)" class="Boton">Minimo Comun Multiplo</button>
+      <button id="mcm" onclick="hallarMCM(numero1.value, numero2.value)" class="Boton">Mínimo Común Múltiplo</button>
       <br>
       <br>
-      <button id="mcd" onclick="hallarMCD(numero1.value, numero2.value)" class="Boton">Maximo Comun Divisor</button>
+      <button id="mcd" onclick="hallarMCD(numero1.value, numero2.value)" class="Boton">Máximo Común Divisor</button>
       <br>
       <h4 id="resultado2" class="resultado"></h4>
     </section>
@@ -52,17 +52,17 @@
     <section class="abajo relaciones">
       <h2>Relaciones</h2>
       <div>
-        <input type="text" id="CorchAbre" placeholder="{" class="input corchIzq corchete CorchAbre" disabled/>
+        A = <input type="text" id="CorchAbre" placeholder="{" class="input corchIzq corchete corchAbre" disabled/>
         <input type="text" id="universal" placeholder="Ingrese el conjunto A"class="conjunto"/>
-        <input type="text" id="CorchCierra" placeholder="}" class="input corchDer corchete CorchCierra" disabled/>
+        <input type="text" id="CorchCierra" placeholder="}" class="input corchDer corchete corchCierra" disabled/>
       </div>
 
       <div>
-        <input type="text" id="CorchAbre" placeholder="{" class="input corchIzq corchete CorchAbre" disabled />
-        <input type="text" id="relacion" placeholder="Ingrese la relacion" class="conjunto"/>
-        <input type="text" id="CorchCierra" placeholder="}" class="input corchDer corchete CorchCierra" disabled />
+        R = <input type="text" id="CorchAbre" placeholder="{" class="input corchIzq corchete corchAbre" disabled />
+        <input type="text" id="relacion" placeholder="Ingrese la relación" class="conjunto"/>
+        <input type="text" id="CorchCierra" placeholder="}" class="input corchDer corchete corchCierra" disabled />
       </div>
-      
+
       <button id="Relacion" onclick="relaciones(universal.value, relacion.value)" class="Boton">Relaciones</button>
       <br>
       <h4 id="resultado4" class="resultado"></h4>

@@ -15,6 +15,7 @@
 
 #Relacion{
   width: 30%;
+  margin-left: 37px;
 }
 
 .resultado{
@@ -34,7 +35,7 @@
   width: 5px;
   margin: 0;
 }
-.CorchAbre{
+.corchAbre{
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   height: 19px;
@@ -43,7 +44,7 @@
   margin-right: -4px;
   z-index: 1;
 }
-.CorchCierra {
+.corchCierra {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   height: 19px;
