@@ -64,8 +64,8 @@ function hallarPrimos(numero) {
 function hallarMCD(numero1, numero2) {
     var x = Math.max(numero1, numero2); //Se le asigna a x el mayor de los dos números ingresados
     var y = Math.min(numero1, numero2); //Se le asigna a y el menor de los dos números ingresados
-    var x = Math.abs(x); //Se toma el valor absoluto del numero
-    var y = Math.abs(y); //Se toma el valor absoluto del numero
+    x = Math.abs(x); //Se toma el valor absoluto del numero
+    y = Math.abs(y); //Se toma el valor absoluto del numero
     var residuo; //Se crea una variable residuo
     var toPrint; //Se crea una variable que contendrá el texto a imprimir
     // Algoritmo de Euclides
@@ -87,8 +87,8 @@ function hallarMCM(numero1, numero2) {
     var q = hallarMCD(numero1, numero2); //Se halla el MCD de los dos números, a través de la función hallarMCD
     var x = Math.max(numero1, numero2); //Se le asigna a x el mayor de los dos números ingresados
     var y = Math.min(numero1, numero2); //Se le asigna a y el menor de los dos números ingresados
-    var x = Math.abs(x); //Se toma el valor absoluto de x
-    var y = Math.abs(y); //Se toma el valor absoluto de y
+    x = Math.abs(x); //Se toma el valor absoluto de x
+    y = Math.abs(y); //Se toma el valor absoluto de y
     var MCM = (x * y) / q; //El mínimo común múltiplo es equivalente a multiplicar los dos números y dividirlos entre el MCD
     imprimir2("El Mínimo común Múltiplo entre " + x + " y " + y + " es: " + MCM); //Se imprime
 }
@@ -109,157 +109,163 @@ function isPrimo(numero) {
 function Conjetura(i) {
     var toPrint = ""; //Se crea una variable con el texto a imprimir
     for (let n = 2; n <= i; n++) { //Se hace un ciclo para todos los números mayores a 2(el primo mas pequeño) y menores al número dado
-        var aux = i - n;
-        console.log(aux);
-        console.log(n);
-        console.log(isPrimo(n));
-        console.log(isPrimo(aux));
-        if (isPrimo(n) && isPrimo(aux)) {
-            toPrint = "El numero " + i + " es igual a " + n + " + " + aux + "<br>";
-            console.log(toPrint);
-            return toPrint;
+        var aux = i - n; //Se despeja de la suma uno de los primos, quedando (P1 = i - P2), siendo P2 = n
+        if (isPrimo(n) && isPrimo(aux)) { // Se confirma que los dos números sean primos
+            toPrint = "El numero " + i + " es igual a " + n + " + " + aux + "<br>"; //Se almacena para imprimir
+            return toPrint; //Se retorna
         }
     }
-    return toPrint;
+    return toPrint; //Se retorna (vacío)
 }
 function CicloConjetura(tamaño) {
     var toPrint = ""; //Se crea una variable que contendrá el texto a imprimir
     var sum; //Se crea una variable sum que contendrá cada suma
-    for (let i = 0; i <= (tamaño * 2) + 2; i += 2) { //Se hace un ciclo para la cantidad de números digitada
+    for (let i = 2; i <= (tamaño * 2) + 2; i += 2) { //Se hace un ciclo para la cantidad de números digitada
         sum = Conjetura(i); //Se obtiene la suma de cada número y se guarda en la variable sum
         toPrint += sum; //Se agrega cada suma al texto a imprimir
     }
     imprimir3(toPrint); //Se imprime
 }
 function relaciones(universalS, relacionS) {
-    var relacion;
-    var universal;
-    relacionS = relacionS.replace(/\s+/g, '');
-    universalS = universalS.replace(/\s+/g, '');
-    relacion = relacionS.split(";");
-    universal = universalS.split(";");
-    resultado.innerHTML = "";
-    resultado2.innerHTML = "";
-    resultado3.innerHTML = "";
-    resultado4.innerHTML = "";
-    for (let j = 0; j < relacion.length; j++) {
-        const element = relacion[j].split(',');
-        for (let q = 0; q < element.length; q++) {
+    var relacion; //Se crea arreglo de la relacion
+    var universal; //Se crea arreglo de la relacion
+    relacionS = relacionS.replace(/\s+/g, ''); //Se eliminan los espacios
+    universalS = universalS.replace(/\s+/g, ''); //Se eliminan los espacios
+    relacion = relacionS.split(";"); //Se separa por punto y coma
+    universal = universalS.split(";"); //Se separa por punto y coma
+    resultado.innerHTML = ""; //Se vacían los resultados de otros puntos
+    resultado2.innerHTML = ""; //
+    resultado3.innerHTML = ""; //
+    resultado4.innerHTML = ""; //
+    //Comprobar que todos los elementos pertenecen al conjunto A
+    for (let j = 0; j < relacion.length; j++) { //Ciclo que recorre toda la relacion
+        const element = relacion[j].split(','); //Separa el elemento en los puntos
+        for (let q = 0; q < element.length; q++) { //Se recorren los puntos de cada elemento
             const x = element[q];
-            if (!universal.includes(x)) {
-                resultado4.innerHTML = "<br/>El elemento " + x + " no pertenece al conjunto A";
+            if (!universal.includes(x)) { //Si el elemento no pertenece al universal
+                resultado4.innerHTML = "<br/>El elemento " + x + " no pertenece al conjunto A"; //Imprime
             }
         }
     }
     var PrCruz = [];
     var Reflexiva = [];
-    for (let i = 0; i < universal.length; i++) {
-        const e1 = universal[i];
-        for (let j = 0; j < universal.length; j++) {
-            const e2 = universal[j];
-            if ((e1 != "," && e2 != ",") && (e1 != ";" && e2 != ";")) {
+    for (let i = 0; i < universal.length; i++) { //Ciclo que recorre toda la relacion
+        const e1 = universal[i]; //Almacena el valor 1
+        for (let j = 0; j < universal.length; j++) { //Ciclo que recorre de nuevo toda la relacion
+            const e2 = universal[j]; //Almacena el valor 2
+            if ((e1 != "," && e2 != ",") && (e1 != ";" && e2 != ";")) { //No tiene en cuenta comas ni punto y coma
                 // Halla el producto cruz
-                PrCruz.push(e1 + "," + e2);
-                if (e1 == e2) {
-                    //Halla los elementos que debe contener para ser Reflexiva
-                    Reflexiva.push(e1 + "," + e2);
+                PrCruz.push(e1 + "," + e2); //Une todos los puntos con todos y los agrega al arreglo PrCruz
+                //Halla los elementos que debe contener para ser Reflexiva
+                if (e1 == e2) { //Si ambos puntos son iguales
+                    Reflexiva.push(e1 + "," + e2); //Los une y los agrega al arreglo Reflexiva
                 }
             }
         }
     }
-    var auxRef = 1;
-    var faltRef;
-    for (let i = 0; i < Reflexiva.length; i++) {
-        if (!relacion.includes(Reflexiva[i])) {
-            // Determina si contiene todos los elementos necesarios para ser una relacion reflexiva
-            auxRef = auxRef * 0;
-            faltRef = Reflexiva[i];
+    //Reflexiva
+    var auxRef = true; //Variable auxiliar relaciones reflexivas
+    var faltRef = []; //Conjunto de parejas que faltan para que sea reflexiva
+    for (let i = 0; i < Reflexiva.length; i++) { //Recorre todo el arreglo Reflexiva(Que contiene las parejas necesarias para que sea reflexiva)
+        if (!relacion.includes(Reflexiva[i])) { //Si no incluye a todos
+            auxRef = auxRef && false; //Deja de ser reflexiva
+            faltRef.push(Reflexiva[i]); //Agrega las relaciones faltantes a un arreglo
         }
         else {
-            auxRef = auxRef * 1;
+            auxRef = auxRef && true; //Mantiene el valor
         }
     }
-    if (auxRef == 1) {
-        resultado4.innerHTML += "<br/>La relacion es reflexiva";
+    if (auxRef == true) { //Si la relacion es reflexiva
+        resultado4.innerHTML += "<br/>La relacion es reflexiva"; //Imprime
     }
-    else {
-        resultado4.innerHTML += "<br/>La relacion no es reflexiva ya el elemento (" + faltRef + ") no pertenece a la relacion";
+    else { //Si no es reflexiva
+        resultado4.innerHTML += "<br/>La relacion no es reflexiva ya que las parejas {"; //Imprime
+        for (let i = 0; i < faltRef.length; i++) { //Ciclo que recorre todos las parejas faltantes
+            resultado4.innerHTML += "(" + faltRef[i] + "); "; //Imprime todas las parejas
+        }
+        resultado4.innerHTML += "} no pertenecen a la relacion"; //Imprime
+        resultado4.innerHTML = resultado4.innerHTML.replace("; }", '}'); //Elimina el "; " final
     }
     //Simétrica
-    var auxSim = 1;
-    var auxSimAsim = 1;
-    var faltSim = "";
-    for (let i = 0; i < relacion.length; i++) {
-        const element = relacion[i];
-        var elementA = element.split(",");
-        var simetria = elementA[1] + ',' + elementA[0];
-        if (relacion.includes(simetria)) {
-            auxSim *= 1;
-            if (element === simetria) {
-                auxSimAsim *= 1;
-                debugger;
+    var auxSim = true; //Variable auxiliar relaciones Simétricas
+    var auxSimAsim = true; //Variable auxiliar relaciones Simétricas y antisimétricas
+    var faltSim = []; //Conjunto de las parejas faltantes para que sea simétrica
+    for (let i = 0; i < relacion.length; i++) { //Ciclo que recorre todas las parejas de la relacion
+        const element = relacion[i]; //element sera la pareja actual
+        var elementA = element.split(","); //Se la pareja separa por coma
+        var simetria = elementA[1] + ',' + elementA[0]; //Se invierte la pareja
+        if (relacion.includes(simetria)) { //Se verifica que la pareja invertida también pertenece a la relacion
+            auxSim = auxSim && true; //Se mantiene el valor
+            if (element == simetria) { //Si ambas parejas son iguales (es decir, x=y)
+                auxSimAsim = auxSimAsim && true; //La relacion es simétrica y antisimétrica
             }
             else {
-                auxSimAsim *= 0;
+                auxSimAsim = auxSimAsim && false; //La relacion es solamente simétrica
             }
         }
         else {
-            auxSim *= 0;
-            faltSim = simetria;
+            auxSim = auxSim && false; //La relacion se vuelve antisimétrica
+            faltSim.push(simetria); //Almacena la pareja por la cual no es simétrica
         }
     }
-    if (auxSim == 1 && auxSimAsim == 1) {
-        resultado4.innerHTML += "<br/>La relacion es simétrica y anti simétrica";
+    if (auxSim == true && auxSimAsim == true) { //Si la relacion es simétrica y antisimétrica
+        resultado4.innerHTML += "<br/>La relacion es simétrica y antisimétrica"; //Imprime
     }
-    else if (auxSim == 1) {
-        resultado4.innerHTML += "<br/>La relacion es simétrica";
+    else if (auxSim == true) { //Si la relacion es simétrica
+        resultado4.innerHTML += "<br/>La relacion es simétrica"; //Imprime
     }
-    else {
-        resultado4.innerHTML += "<br/> La relacion es Anti simétrica ya que la pareja (" + faltSim + ") no pertenece a la relacion";
+    else { //Si la relacion es antisimétrica
+        resultado4.innerHTML += "<br/> La relacion es Antisimétrica ya que las parejas {"; //Imprime
+        for (let i = 0; i < faltSim.length; i++) { //Ciclo para todas las parejas por las cuales la relacion es antisimétrica
+            resultado4.innerHTML += "(" + faltSim[i] + "); "; //Imprime
+        }
+        resultado4.innerHTML += "} no pertenecen a la relacion"; //Imprime
+        resultado4.innerHTML = resultado4.innerHTML.replace("; }", '}'); //Elimina el "; " final
     }
     // Transitiva
-    var auxTran = 1;
-    var exTr1 = "";
-    var exTr2 = "";
-    var buscado = "";
-    var buscadoNE = "";
-    for (let i = 0; i < relacion.length; i++) {
-        const element1 = relacion[i];
-        var element1A = element1.split(",");
-        for (let j = 0; j < relacion.length; j++) {
-            const element2 = relacion[j];
-            var element2A = element2.split(",");
-            if (element1A[1] == element2A[0]) {
-                buscado = element1A[0] + "," + element2A[1];
-                if (relacion.includes(buscado)) {
-                    auxTran *= 1;
+    var auxTran = true; //Variable auxiliar relacion transitiva
+    var buscado;
+    var buscadoNE = [];
+    for (let i = 0; i < relacion.length; i++) { //Ciclo que recorre todas las parejas
+        const element1 = relacion[i]; // Almacena la pareja actual
+        var element1A = element1.split(","); // Separa la pareja actual
+        for (let j = 0; j < relacion.length; j++) { //Ciclo que recorre nuevamente todas la parejas
+            const element2 = relacion[j]; //Almacena la segunda pareja
+            var element2A = element2.split(","); //Separa la segunda pareja
+            if (element1A[1] == element2A[0]) { //Compara si el segundo elemento de la P1 es igual al primero de la P2
+                buscado = element1A[0] + "," + element2A[1]; //Hace una nueva pareja con el primer elemento de la P1 y el segundo de la P2
+                if (relacion.includes(buscado)) { //Revisa si la relacion incluye esa nueva pareja
+                    auxTran = auxTran && true; //Lo cual significa que la relacion mantiene su transitividad
                 }
-                else {
-                    auxTran *= 0;
-                    exTr1 = element1;
-                    exTr2 = element2;
-                    buscadoNE = element1A[0] + "," + element2A[1];
+                else { //Si la relacion no incluye la nueva pareja
+                    auxTran = auxTran && false; //Significa que la relacion ya no es transitiva
+                    buscadoNE.push(buscado); //Agrega la nueva pareja al arreglo buscadoNE
                 }
             }
         }
     }
-    if (auxTran == 1) {
-        resultado4.innerHTML += "<br/>La relacion es transitiva";
+    if (auxTran == true) { //La relacion es transitiva
+        resultado4.innerHTML += "<br/>La relacion es transitiva"; //Imprime
     }
-    else {
-        resultado4.innerHTML += "<br/>La relacion no es transitiva ya que las parejas (" + exTr1 + ") y (" + exTr2 + ") pertenecen a la relacion, pero la pareja " + buscadoNE + " no";
+    else if (auxTran == false) { //La relacion no es transitiva
+        resultado4.innerHTML += "<br/>La relacion no es transitiva ya que las parejas {"; //Imprime
+        for (let i = 0; i < buscadoNE.length; i++) { //Ciclo para las parejas por las cuales la relacion no es simétrica
+            resultado4.innerHTML += "(" + buscadoNE[i] + "); "; //Imprime
+        }
+        resultado4.innerHTML += "} no pertenecen a la relacion"; //Imprime
+        resultado4.innerHTML = resultado4.innerHTML.replace("; }", '}'); //Elimina el "; " final
     }
     // Equivalencia u orden
-    if (auxRef == 1 && auxSimAsim == 1 && auxTran == 1) {
-        resultado4.innerHTML += "<br/> La relacion es de Equivalencia y de Orden";
+    if (auxRef == true && auxSimAsim == true && auxTran == true) { //Si la relacion es Reflexiva, Simétrica, Antisimétrica y Transitiva
+        resultado4.innerHTML += "<br/> La relacion es de Equivalencia y de Orden"; //Quiere decir que es de Equivalencia y de Orden
     }
-    else if (auxRef == 1 && auxSim == 1 && auxTran == 1) {
-        resultado4.innerHTML += "<br/> La relacion es de Equivalencia";
+    else if (auxRef == true && auxSim == true && auxTran == true) { //Si la relacion es Reflexiva, Simétrica y Transitiva
+        resultado4.innerHTML += "<br/> La relacion es de Equivalencia"; //Quiere decir que la relacion es de Equivalencia
     }
-    else if (auxRef == 1 && auxSim == 0 && auxTran == 1) {
-        resultado4.innerHTML += "<br/> La relacion es de Orden";
+    else if (auxRef == true && auxSim == true && auxTran == true) { //Si la relacion es Reflexiva, Antisimética y Transitiva
+        resultado4.innerHTML += "<br/> La relacion es de Orden"; //Quiere decir que la relacion es de Orden
     }
-    else {
-        resultado4.innerHTML += "<br/> La relacion no es de Orden ni de Equivalencia";
+    else { //Si la relacion no es Reflexiva, Simétrica, Antisimétrica o Transitiva quiere decir que la relacion no es 
+        resultado4.innerHTML += "<br/> La relacion no es de Orden ni de Equivalencia"; // ni de Orden ni de Equivalencia
     }
 }
