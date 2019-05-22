@@ -286,13 +286,13 @@ function relaciones(universalS: string, relacionS: string) {
     resultado4.innerHTML = resultado4.innerHTML.replace("; }", '}'); //Elimina el "; " final
   }
   // Equivalencia u orden
-  if (auxRef == true && auxSimAsim == true && auxTran == true) {//Si la relacion es Reflexiva, Simétrica, Antisimétrica y Transitiva
+  if (auxRef == true && auxSim == true && auxSimAsim == true && auxTran == true) {//Si la relacion es Reflexiva, Simétrica, Antisimétrica y Transitiva
     resultado4.innerHTML += "<br/> La relacion es de Equivalencia y de Orden";//Quiere decir que es de Equivalencia y de Orden
   }
   else if (auxRef == true && auxSim == true && auxTran == true) {//Si la relacion es Reflexiva, Simétrica y Transitiva
     resultado4.innerHTML += "<br/> La relacion es de Equivalencia";//Quiere decir que la relacion es de Equivalencia
   }
-  else if (auxRef == true && auxSim == true && auxTran == true) {//Si la relacion es Reflexiva, Antisimética y Transitiva
+  else if (auxRef == true && auxSim == false && auxTran == true) {//Si la relacion es Reflexiva, Antisimétrica y Transitiva
     resultado4.innerHTML += "<br/> La relacion es de Orden";//Quiere decir que la relacion es de Orden
   }
   else {//Si la relacion no es Reflexiva, Simétrica, Antisimétrica o Transitiva quiere decir que la relacion no es 
